@@ -68,7 +68,9 @@
               "browserTarget": "my-app:build:production"
             },
             "development": {
-              "browserTarget": "my-app:build:development"
+              "browserTarget": "my-app:build:development",
+              "host": "0.0.0.0",
+              "port": 5000
             }
           },
           "defaultConfiguration": "development"
