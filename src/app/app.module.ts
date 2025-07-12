@@ -5,20 +5,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './shared/layout/layout.component';
+import { LayoutModule } from './shared/layout/layout.module';
 import { HomeComponent } from './pages/p-personnel/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
     HomeComponent,
   ],
   imports: [
     FormsModule,
     BrowserModule,
     CommonModule, 
-    AppRoutingModule
+    AppRoutingModule,
+
+    // Các module con
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
