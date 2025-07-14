@@ -1,25 +1,20 @@
 <div class="header">
-    <div class="header__logo">
-        <!-- Ảnh -->
-        <!-- Select down -->
-    </div>
     <div class="header__nav">
-        <ul>
-            <li>
-                <p>Header</p>
+        <ul class="header__nav-list">
+            <li *ngFor="let item of items" class="header__nav-item">
+                <a [routerLink]="item.link">{{item.title | uppercase}}</a>
+                <div class="header__nav-straight">
+                    {{ item.straight }}
+                </div>
             </li>
         </ul>
     </div>
 
     <div class="header__icon">
-        <div class="header__icon-search">
-            <!-- Search -->
-        </div>
-        <div class="header__icon-notify">
-            <!-- Notify -->
-        </div>
-        <div class="header__icon-account">
-            <!-- Acount -->
-        </div>
+        <ul class="header__icon-list" *ngFor="let icon of icons">
+            <li class="header__icon-item">
+                <i class="fa-solid {{icon.nameIcon}}"></i>
+            </li>
+        </ul>
     </div>
 </div>

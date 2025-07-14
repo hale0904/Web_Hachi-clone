@@ -1,9 +1,73 @@
-.header {
-    
-    .header__logo {
+@import '../../../../../styles/color';
 
-    }
+$heightHeader: 50px;
+
+.header {
+    display: flex;
+    height: $heightHeader;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px rgb(227, 227, 227);
+
     .header__nav {
-        
+        height: $heightHeader;
+        flex: 4;
+
+        .header__nav-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            height: $heightHeader;
+            padding-left: 10px;
+
+            .header__nav-item{
+                display: flex;
+                align-items: center;
+                height: $heightHeader;
+
+                a {
+                    text-decoration: none;
+                    color: $colorHeader;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    padding: 16.2px 5px;
+
+                    &:hover {
+                        color: $colorPrimary;
+                    }
+                }
+
+                .header__nav-straight {
+                    background-color: $colorHeader;
+                    padding: 1.2px;
+                    border-radius: 2px;
+                    margin-left: 15px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+
+    .header__icon {
+        flex: 1;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+
+        .header__icon-list {
+            padding-right: 20px;
+            padding-top: 3px;
+            list-style: none;
+
+            .header__icon-item {
+
+                i {
+                    font-size: 1.4rem;
+                    color: #202020;
+                    padding: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }
