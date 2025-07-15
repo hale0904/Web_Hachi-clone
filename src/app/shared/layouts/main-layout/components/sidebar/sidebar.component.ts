@@ -11,7 +11,7 @@ export class SidebarComponent {
   ]
 
   navs = [
-    {icon: 'fa-list-check', title: 'Đánh giá nhân sự', dropdown: 'fa-caret-down'},
-    {icon: 'fa-list-check', title: 'Quản lý sản phẩm', dropdown: 'fa-caret-down'}
+    {link: 'personnel-profile', icon: 'fa-list-check', title: 'Đánh giá nhân sự', dropdown: 'fa-caret-down'},
+    {link: '', icon: 'fa-list-check', title: 'Quản lý sản phẩm', dropdown: 'fa-caret-down'}
   ]
 }

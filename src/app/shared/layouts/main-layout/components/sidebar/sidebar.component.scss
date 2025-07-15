@@ -36,32 +36,36 @@
 
                 .sidebar__nav-item {
                     height: 100%;
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-
-                    &:hover {
-                        background-color: #2e3d5a;
-                        
-                        i,span {
-                            color: #5CB800;
-                        }
-                    }
                     
-
-                    i, span{
-                        font-size: 1.5rem;  
-                        font-weight: 600;
-                        color: #fff;
+                    a {
+                        height: 100%;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        text-decoration: none;
 
                         &:hover {
+                            background-color: #2e3d5a;
                             
+                            i,span {
+                                color: #5CB800;
+                            }
                         }
-                    }
 
-                    .sidebar__nav-icon-dropdown {
-                        cursor: pointer;
-                        padding: 2px;
+                        i, span{
+                            font-size: 1.5rem;  
+                            font-weight: 600;
+                            color: #fff;
+
+                            &:hover {
+                                
+                            }
+                        }
+
+                        .sidebar__nav-icon-dropdown {
+                            cursor: pointer;
+                            padding: 2px;
+                        }
                     }
                 }
             }

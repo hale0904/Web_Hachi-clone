@@ -8,11 +8,13 @@
         <ul *ngFor="let nav of navs" class="sidebar__nav-list">
             <li>
                 <div class="sidebar__nav-item">
-                    <i class="fa-solid {{nav.icon}}"></i>
-                    <span> {{ nav.title | uppercase}}</span>
-                    <div class="sidebar__nav-icon-dropdown">
-                        <i class="fa-solid {{nav.dropdown}}"></i>
-                    </div>       
+                   <a [routerLink]="nav.link">
+                        <i class="fa-solid {{nav.icon}}"></i>
+                        <span> {{ nav.title | uppercase}}</span>
+                        <div class="sidebar__nav-icon-dropdown">
+                            <i class="fa-solid {{nav.dropdown}}"></i>
+                        </div>   
+                   </a>    
                 </div>
             </li>
         </ul>

@@ -1,0 +1,27 @@
+$heightFooter: 30px;
+
+.footer {
+    height: $heightFooter;
+    background-color: #f0f3f5;
+    border: solid 1px #d5d5d5;
+
+    .footer-info {
+        height: $heightFooter;
+
+        .footer-info-list {
+            height: $heightFooter;
+            padding-left: 16px ;
+            li {
+                height: $heightFooter;
+                display: flex;
+                align-items: center;
+                font-size: 1.1rem;
+
+                a {
+                    color: #007BFF;
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+}

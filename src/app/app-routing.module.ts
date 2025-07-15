@@ -3,16 +3,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Import file
-import { LayoutComponent } from './shared/layout/layout.component';
+import { LayoutMainComponent } from './shared/layouts/main-layout/main-layout.component';
+import { ProfileComponent } from './pages/p-personnel/profile/profile.component';
 
 const routes: Routes = [
   {
     // Đường dẫn trang chủ
     path: 'home',
-    component: LayoutComponent,
+    component: LayoutMainComponent,
     title: 'HACHI',
     children: [
-
+      { path: 'personnel-profile', component: ProfileComponent}
     ]
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' }

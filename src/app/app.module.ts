@@ -5,13 +5,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutModule } from './shared/layout/layout.module';
-import { HomeComponent } from './pages/p-personnel/home/home.component';
+import { PersonnelModule } from './pages/p-personnel/p-personnel.module';
+import { LayoutModule } from './shared/layouts/layout.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
   ],
   imports: [
     FormsModule,
@@ -20,7 +19,8 @@ import { HomeComponent } from './pages/p-personnel/home/home.component';
     AppRoutingModule,
 
     // Các module con
-    LayoutModule,
+    PersonnelModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
