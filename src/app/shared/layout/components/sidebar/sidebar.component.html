@@ -1,1 +1,20 @@
-<p>sidebar works!</p>
+<div class="sidebar">
+    <div class="sidebar__logo" *ngFor="let item of items">
+        <img [src]="item.imgLogo" [alt]="item.descrip">
+        <i class="fa-solid {{item.dropdown}}"></i>
+    </div>
+    
+    <div class="sidebar__nav">
+        <ul *ngFor="let nav of navs" class="sidebar__nav-list">
+            <li>
+                <div class="sidebar__nav-item">
+                    <i class="fa-solid {{nav.icon}}"></i>
+                    <span> {{ nav.title | uppercase}}</span>
+                    <div class="sidebar__nav-icon-dropdown">
+                        <i class="fa-solid {{nav.dropdown}}"></i>
+                    </div>       
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

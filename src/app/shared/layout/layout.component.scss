@@ -1,7 +1,8 @@
 .container {
     display: flex;
     background-color: #EDEFF3;
-    height: 600px;
+    height: 695px;
+    overflow: hidden;
 
     .container__sidebar {
         flex: 1;
@@ -11,7 +12,7 @@
         flex: 5;
         
         .container__header {
-
+            
         }
 
         .container__router {
