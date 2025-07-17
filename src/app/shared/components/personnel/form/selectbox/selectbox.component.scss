@@ -1,0 +1,22 @@
+.selectBox {
+    display: flex;
+    flex-direction: column;
+
+    .selectBox__title {
+        font-size: 1.6rem;
+        color: #343A40;
+        font-weight: 600;
+        padding: 10px 0;
+    }
+
+    .selectBox__feild {
+        width: 270px;
+        height: 35px;
+        outline: none;
+        border: 1px solid #DBDEE7;
+
+        &:hover {
+            border: 1px solid #343A40;
+        }
+    }
+}

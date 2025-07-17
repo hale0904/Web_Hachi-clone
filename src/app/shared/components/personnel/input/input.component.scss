@@ -1,0 +1,22 @@
+.input {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 1.4rem;
+        color: #343A40;
+        font-weight: 600;
+        padding: 10px 0;
+    }
+
+    input {
+        padding: 5px;
+        outline: none;
+        width: 220px;
+        border: 1px solid #DBDEE7;
+
+        &:hover {
+            border: 1px solid #343A40;
+        }
+    }
+}

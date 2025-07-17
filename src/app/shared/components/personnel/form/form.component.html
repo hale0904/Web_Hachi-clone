@@ -1,0 +1,75 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+  <h3>1. THÔNG TIN CƠ BẢN</h3>
+  <div class="container__form">
+    <div class="feild__col-1">
+      <app-input-field label="Họ" controlName="ho"/>
+      <app-input-field label="Tên Đệm" controlName="tenDem" />
+      <app-input-field label="Tên" controlName="ten" />
+      <app-input-field label="Tên Viết Tắt" controlName="tenVietTat" />
+    </div>
+
+    <div class="feild__col-2">
+      <app-select-field label="Giới tính" controlName="gioiTinh" [options]="gioiTinhOptions" />  
+      <app-select-field label="Quốc tịch" controlName="quocTich" [options]="quocTichOptions" />  
+      <app-select-field label="Dân tộc" controlName="danToc" [options]="danTocOptinos" />  
+      <app-select-field label="Tôn giáo" controlName="tonGiao" [options]="tonGiaoOptions" />  
+    </div>
+
+    <div class="feild__col-3">
+      <app-select-field label="Tình trạng hôn nhân" controlName="tinhTrangHonNhan" [options]="tinhTrangHonNhanOptions" />
+      <app-input-field label="Nguyên quán" controlName="nguyenQuan" />
+      <app-input-field label="Nơi sinh" controlName="noiSinh" />  
+    </div>
+  </div>
+
+  <h3>1. THÔNG TIN CƠ BẢN</h3>
+  <div class="container__form">
+    <div class="feild__col-1">
+      <app-input-field label="Họ" controlName="ho"/>
+      <app-input-field label="Tên Đệm" controlName="tenDem" />
+      <app-input-field label="Tên" controlName="ten" />
+      <app-input-field label="Tên Viết Tắt" controlName="tenVietTat" />
+    </div>
+
+    <div class="feild__col-2">
+      <app-select-field label="Giới tính" controlName="gioiTinh" [options]="gioiTinhOptions" />  
+      <app-select-field label="Quốc tịch" controlName="quocTich" [options]="quocTichOptions" />  
+      <app-select-field label="Dân tộc" controlName="danToc" [options]="danTocOptinos" />  
+      <app-select-field label="Tôn giáo" controlName="tonGiao" [options]="tonGiaoOptions" />  
+    </div>
+
+    <div class="feild__col-3">
+      <app-select-field label="Tình trạng hôn nhân" controlName="tinhTrangHonNhan" [options]="tinhTrangHonNhanOptions" />
+      <app-input-field label="Nguyên quán" controlName="nguyenQuan" />
+      <app-input-field label="Nơi sinh" controlName="noiSinh" />  
+    </div>
+
+  </div>
+
+  <h3>1. THÔNG TIN CƠ BẢN</h3>
+  <div class="container__form">
+    <div class="feild__col-1">
+      <app-input-field label="Họ" controlName="ho"/>
+      <app-input-field label="Tên Đệm" controlName="tenDem" />
+      <app-input-field label="Tên" controlName="ten" />
+      <app-input-field label="Tên Viết Tắt" controlName="tenVietTat" />
+    </div>
+
+    <div class="feild__col-2">
+      <app-select-field label="Giới tính" controlName="gioiTinh" [options]="gioiTinhOptions" />  
+      <app-select-field label="Quốc tịch" controlName="quocTich" [options]="quocTichOptions" />  
+      <app-select-field label="Dân tộc" controlName="danToc" [options]="danTocOptinos" />  
+      <app-select-field label="Tôn giáo" controlName="tonGiao" [options]="tonGiaoOptions" />  
+    </div>
+
+    <div class="feild__col-3">
+      <app-select-field label="Tình trạng hôn nhân" controlName="tinhTrangHonNhan" [options]="tinhTrangHonNhanOptions" />
+      <app-input-field label="Nguyên quán" controlName="nguyenQuan" />
+      <app-input-field label="Nơi sinh" controlName="noiSinh" />  
+    </div>
+
+  </div>
+
+
+  <button type="submit">Gửi</button>
+</form>

@@ -5,8 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PersonnelModule } from './pages/p-personnel/p-personnel.module';
 import { LayoutModule } from './shared/layouts/layout.module';
+import { P_PersonnelModule } from './pages/p-personnel/p-personnel.module';
+
 
 @NgModule({
   declarations: [
@@ -19,8 +20,8 @@ import { LayoutModule } from './shared/layouts/layout.module';
     AppRoutingModule,
 
     // Các module con
-    PersonnelModule,
-    LayoutModule
+    LayoutModule,
+    P_PersonnelModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

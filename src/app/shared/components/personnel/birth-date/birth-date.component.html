@@ -1,0 +1,14 @@
+<div class="birth-date">
+    <label>{{label}}</label>
+    <div class="date">
+        <select [(ngModel)]="selectedYear" (change)="updateDays()">
+            <option *ngFor="let year of years" [value]="year"> {{year}}</option>
+        </select>
+        <select [(ngModel)]="selectedMonth" (change)="updateDays()">
+            <option *ngFor="let month of months" [value]="month"> {{month}}</option>
+        </select>
+        <select [(ngModel)]="selectedDay" (change)="updateModel()">
+            <option *ngFor="let day of days" [value]="day"> {{day}}</option>
+        </select>
+    </div>
+</div>

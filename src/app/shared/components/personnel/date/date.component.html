@@ -1,0 +1,8 @@
+<div class="date">
+  <label>{{ label }}</label>
+  <input
+    type="date"
+    [ngModel]="model[property] | date:'yyyy-MM-dd'"
+    (ngModelChange)="model[property] = $event"
+  />
+</div>

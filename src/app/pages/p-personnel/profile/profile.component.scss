@@ -1,0 +1,43 @@
+.container__profile {
+    height: 250vh;
+
+    .container__profile-nav-title {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #dedede;
+
+        span {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #959DB3;
+            padding-left: 10px;
+        }
+    }
+
+    .container__profile-content {
+        display: flex;
+
+        .container__profile-sidebar {
+            flex: 1;
+            background-color: #fff;
+            height: 100vh;
+        }
+        
+        .container__profile-info {
+            flex: 5;
+
+            h2 {
+                padding: 20px 0px 10px 10px;
+            }
+
+            .container__profile-col {
+                display: flex;
+                gap: 50px;
+                padding: 10px;
+                margin-left: 10px ;
+                background-color: #fff;
+            }
+        }
+    }
+}

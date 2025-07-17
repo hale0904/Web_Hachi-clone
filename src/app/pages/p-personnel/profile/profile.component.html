@@ -1,1 +1,203 @@
-<p>home works!</p>
+<div class="container__profile">
+    <div class="container__profile-nav-title">
+        <span>HỒ SƠ NHÂN SỰ</span>
+    </div>
+
+    <div class="container__profile-content">
+        <div class="container__profile-sidebar">
+            <app-avatar-info />
+            <app-avatar-nav />
+        </div>
+
+        <div class="container__profile-info">
+            <div *ngIf="nhanVien" >
+                <h2>1. Thông tin nhân viên</h2>
+                <div class="container__profile-col">
+                    
+                    <div class="container__profile-col-1">
+                        <app-input label="Họ" [model]="nhanVien" property="ho"></app-input>
+                        <app-input label="Tên đệm" [model]="nhanVien" property="tenDem"></app-input>
+                        <app-input label="Tên" [model]="nhanVien" property="ten"></app-input>
+                        <app-input label="Tên viết tắt" [model]="nhanVien" property="tenVietTat"></app-input>
+                    </div>
+
+                    <div class="container__profile-col-2">
+                        <app-dropdown
+                            label="Giới tính"
+                            [model]="nhanVien"
+                            property="gioiTinh"
+                            [options]="['Nam', 'Nữ', 'Khác']">
+                        </app-dropdown>
+                        <app-dropdown
+                            label="Quốc tịch"
+                            [model]="nhanVien"
+                            property="quocTich"
+                            [options]="['Việt Nam', 'Mỹ', 'Trung Quốc']">
+                        </app-dropdown>
+                        <app-dropdown
+                            label="Dân tộc"
+                            [model]="nhanVien"
+                            property="danToc"
+                            [options]="['Kinh', 'Mường', 'Thái']">
+                        </app-dropdown>
+                        <app-dropdown
+                            label="Tôn giáo"
+                            [model]="nhanVien"
+                            property="tonGiao"
+                            [options]="['Thiên chúa giáo', 'Phật giáo', 'Không']">
+                        </app-dropdown>
+                    </div>
+
+                    <div class="container__profile-col-3">
+                        <app-dropdown
+                            label="Tình trạng hôn nhân"
+                            [model]="nhanVien"
+                            property="tinhTrangHonNhan"
+                            [options]="['Đã kết hôn', 'Độc thân']">
+                        </app-dropdown>
+                        <app-input label="Nguyên quán" [model]="nhanVien" property="nguyenQuan"></app-input>
+                        <app-input label="Nơi sinh" [model]="nhanVien" property="noiSinh"></app-input>
+                        
+                    </div>
+               </div>
+
+                <h2>2. THÔNG TIN CHỨNG THỰC VÀ THẾU TNCN</h2>
+                <div class="container__profile-col">
+                    
+                    <div class="container__profile-col-1">
+                        <app-input label="Số CMND/CCCD" [model]="nhanVien.thongTinChungThuc_CCCD" property="cccd"></app-input>
+                        <app-date label="Ngày cấp" [model]="nhanVien.thongTinChungThuc_CCCD" property="ngayCap"></app-date>
+                        <app-date label="Ngày hết hạn" [model]="nhanVien.thongTinChungThuc_CCCD" property="ngayHetHan"></app-date>
+                        <app-input label="Nơi cấp" [model]="nhanVien.thongTinChungThuc_CCCD" property="noiCap"></app-input>
+                    </div>
+
+                    <div class="container__profile-col-2">
+                        <app-input label="Số hộ chiếu" [model]="nhanVien.thongTinChungThuc_SoHC" property="soHoChieu"></app-input>
+                        <app-date label="Ngày cấp" [model]="nhanVien.thongTinChungThuc_SoHC" property="ngayCap"></app-date>
+                        <app-date label="Ngày hết hạn" [model]="nhanVien.thongTinChungThuc_SoHC" property="ngayHetHan"></app-date>
+                        <app-input label="Nơi cấp" [model]="nhanVien.thongTinChungThuc_SoHC" property="noiCap"></app-input>
+                        
+                    </div>
+
+                    <div class="container__profile-col-3">
+                        <app-input label="Mã số thuế TNCN" [model]="nhanVien.theuTNCN" property="maSoTheuTNCN"></app-input>
+                        <app-date label="Ngày dăng ký" [model]="nhanVien.theuTNCN" property="ngayDangKy"></app-date>
+                        <app-input label="Nơi đăng ký" [model]="nhanVien.theuTNCN" property="noiDangKy"></app-input>
+                        
+                    </div>
+               </div>
+
+                <h2>3. VĂN HÓA, CHUYÊN MÔN - NGHỀ NGHIỆP</h2>
+                <div class="container__profile-col">
+                    
+                    <div class="container__profile-col-1">
+                        <app-dropdown
+                            label="Trình độ học vấn"
+                            [model]="nhanVien.ngheNghiep"
+                            property="trinhDoHocVan"
+                            [options]="['Đại học', 'Cao đẳng', 'Trung cấp']">
+                        </app-dropdown>
+                        <app-dropdown
+                            label="Học hàm"
+                            [model]="nhanVien.ngheNghiep"
+                            property="hocHam"
+                            [options]="['Giáo sư', 'Tiến sĩ', 'Không']">
+                        </app-dropdown>
+                        <app-dropdown
+                            label="Học vị"
+                            [model]="nhanVien.ngheNghiep"
+                            property="hocVi"
+                            [options]="['Cử nhân', 'Thạc sĩ']">
+                        </app-dropdown>
+                    </div>
+
+                    <div class="container__profile-col-2">
+                        <app-input label="Lĩnh vực chuyên gia" [model]="nhanVien.ngheNghiep" property="linhVucChuyenGia"></app-input>
+                        <app-input label="ngheNghiep" [model]="nhanVien.ngheNghiep" property="ngheNghiep"></app-input>
+                        
+                    </div>
+               </div>
+
+               <h2>4. THÔNG TIN LIÊN HỆ</h2>
+                <div class="container__profile-col">
+                    
+                    <div class="container__profile-col-1">
+                        <app-input label="Điện thoại di động 1" [model]="nhanVien.thongTinLienHe" property="dTDD1"></app-input>
+                        <app-input label="Điện thoại di động 2" [model]="nhanVien.thongTinLienHe" property="dTDD2"></app-input>
+                        <app-input label="Email" [model]="nhanVien.thongTinLienHe" property="email"></app-input>
+                    </div>
+
+                    <div class="container__profile-col-2">
+                        <app-input label="Người liên hệ khẩn cấp" [model]="nhanVien.thongTinLienHe" property="nguoiLienHeKhanCap"></app-input>
+                        <app-input label="Số điện thoại liên hệ khẩn cấp" [model]="nhanVien.thongTinLienHe" property="soDTLienHeKhanCap"></app-input>
+                        <app-input label="Mối quan hệ" [model]="nhanVien.thongTinLienHe" property="moiQuanHe"></app-input>
+                    </div>
+
+                    <div class="container__profile-col-3">
+                        <app-input label="Mạng xã hội 1" [model]="nhanVien.thongTinLienHe" property="mangXH1"></app-input>
+                        <app-dropdown
+                            [model]="nhanVien.ngheNghiep"
+                            property="hocVi"
+                            [options]="['FB', 'Linked']">
+                        </app-dropdown>
+                        <app-input label="Mạng xã hội 2" [model]="nhanVien.thongTinLienHe" property="mangXH2"></app-input>
+                        <app-dropdown
+                            [model]="nhanVien.ngheNghiep"
+                            property="hocVi"
+                            [options]="['FB', 'Linked']">
+                        </app-dropdown>
+                        <app-input label="Tài khoản chat/VoiP" [model]="nhanVien.thongTinLienHe" property="mangXH2"></app-input>
+                        <app-dropdown
+                            [model]="nhanVien.ngheNghiep"
+                            property="hocVi"
+                            [options]="['FB', 'Linked']">
+                        </app-dropdown>
+                        
+                    </div>
+               </div>
+
+               <h2>5. ĐỊA CHỈ CƯ TRÚ</h2>
+                <div class="container__profile-col">
+                    
+                    <div class="container__profile-col-1">
+                        <app-input label="Địa chỉ thường trú" [model]="nhanVien.diaChiCuTru" property="dTDD1"></app-input>
+                        <app-dropdown
+                            label="Địa chỉ thường trú"
+                            [model]="nhanVien.ngheNghiep"
+                            property="hocVi"
+                            [options]="['FB', 'Linked']">
+                        </app-dropdown>
+                    </div>
+
+                    <div class="container__profile-col-2">
+                        <app-input label="Người liên hệ khẩn cấp" [model]="nhanVien.thongTinLienHe" property="nguoiLienHeKhanCap"></app-input>
+                        <app-input label="Số điện thoại liên hệ khẩn cấp" [model]="nhanVien.thongTinLienHe" property="soDTLienHeKhanCap"></app-input>
+                        <app-input label="Mối quan hệ" [model]="nhanVien.thongTinLienHe" property="moiQuanHe"></app-input>
+                    </div>
+
+                    <div class="container__profile-col-3">
+                        <app-input label="Mạng xã hội 1" [model]="nhanVien.thongTinLienHe" property="mangXH1"></app-input>
+                        <app-dropdown
+                            [model]="nhanVien.ngheNghiep"
+                            property="hocVi"
+                            [options]="['FB', 'Linked']">
+                        </app-dropdown>
+                        <app-input label="Mạng xã hội 2" [model]="nhanVien.thongTinLienHe" property="mangXH2"></app-input>
+                        <app-dropdown
+                            [model]="nhanVien.ngheNghiep"
+                            property="hocVi"
+                            [options]="['FB', 'Linked']">
+                        </app-dropdown>
+                        <app-input label="Tài khoản chat/VoiP" [model]="nhanVien.thongTinLienHe" property="mangXH2"></app-input>
+                        <app-dropdown
+                            [model]="nhanVien.ngheNghiep"
+                            property="hocVi"
+                            [options]="['FB', 'Linked']">
+                        </app-dropdown>
+                        
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
