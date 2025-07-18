@@ -8,7 +8,6 @@ import { ProfileComponent } from './pages/p-personnel/profile/profile.component'
 
 const routes: Routes = [
   {
-    // Đường dẫn trang chủ
     path: 'home',
     component: LayoutMainComponent,
     title: 'HACHI',

@@ -37,6 +37,11 @@
                 padding: 10px;
                 margin-left: 10px ;
                 background-color: #fff;
+
+                .container__profile-social {
+                    display: flex;
+                    gap: 10px;
+                }
             }
         }
     }

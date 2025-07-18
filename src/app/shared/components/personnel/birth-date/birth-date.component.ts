@@ -37,7 +37,6 @@ export class BirthDateComponent {
     const daysInMonth = new Date(this.selectedYear, this.selectedMonth, 0).getDate();
     this.days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
-    // Nếu ngày hiện tại > số ngày trong tháng => reset về 1
     if (this.selectedDay > daysInMonth) {
       this.selectedDay = 1;
     }

@@ -1,15 +1,40 @@
 export class DiaChiCuTru {
+  idNV: string;
   diaChi: string;
   quocGia: QuocGia;
   tinhThanh: TinhThanh;
   quanHuyen: QuanHuyen;
 
   constructor(
+    idNV: string,
     diaChi: string,
     quocGia: QuocGia,
     tinhThanh: TinhThanh,
     quanHuyen: QuanHuyen
   ) {
+    this.idNV = idNV;
+    this.diaChi = diaChi;
+    this.quocGia = quocGia;
+    this.tinhThanh = tinhThanh;
+    this.quanHuyen = quanHuyen;
+  }
+}
+
+export class DiaChiTamTru {
+  idNV: string;
+  diaChi: string;
+  quocGia: QuocGia;
+  tinhThanh: TinhThanh;
+  quanHuyen: QuanHuyen;
+
+  constructor(
+    idNV: string,
+    diaChi: string,
+    quocGia: QuocGia,
+    tinhThanh: TinhThanh,
+    quanHuyen: QuanHuyen
+  ) {
+    this.idNV = idNV;
     this.diaChi = diaChi;
     this.quocGia = quocGia;
     this.tinhThanh = tinhThanh;

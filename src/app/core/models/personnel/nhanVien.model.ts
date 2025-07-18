@@ -1,4 +1,4 @@
-import { DiaChiCuTru } from "./diaChi.model";
+import { DiaChiCuTru, DiaChiTamTru } from "./diaChi.model";
 import { NgheNghiep } from "./ngheNghiep.model";
 import { TheuTNCN, TTChungThuc_CCCD, TTChungThuc_SoHC } from "./thongTinChungThuc.model";
 import { ThongTinLienHe } from "./thongTinLienHe.model";
@@ -50,6 +50,7 @@ export class NhanVien {
 
   // Quan hệ 1-1
   diaChiCuTru!: DiaChiCuTru;
+  diaChiTamTru!: DiaChiTamTru;
   thongTinChungThuc_CCCD!: TTChungThuc_CCCD;
   thongTinChungThuc_SoHC!: TTChungThuc_SoHC;
   theuTNCN!: TheuTNCN;

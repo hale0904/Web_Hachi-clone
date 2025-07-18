@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NhanVien } from 'src/app/core/models/personnel/nhanVien.model';
 
 @Component({
   selector: 'app-input',

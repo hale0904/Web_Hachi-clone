@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { NgheNghiep } from 'src/app/core/models/personnel/ngheNghiep.model';
+import { QuanHuyen, QuocGia, TinhThanh } from 'src/app/core/models/personnel/diaChi.model';
 import { NhanVien } from 'src/app/core/models/personnel/nhanVien.model';
-import { TheuTNCN, TTChungThuc_CCCD, TTChungThuc_SoHC } from 'src/app/core/models/personnel/thongTinChungThuc.model';
-import { ThongTinLienHe } from 'src/app/core/models/personnel/thongTinLienHe.model';
+import { MockNhanVienService } from 'src/app/core/services/personnel/fetchAPI/personnel.service';
 
 @Component({
   selector: 'app-home',
@@ -10,72 +9,70 @@ import { ThongTinLienHe } from 'src/app/core/models/personnel/thongTinLienHe.mod
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
-  nhanVien: NhanVien = new NhanVien(
-  'NV001',
-  'Nguyen',
-  'Van',
-  'An',
-  'N.V.A',
-  'Nam',
-  'Việt Nam',
-  'Kinh',
-  'Không',
-  'Độc thân',
-  'TP Hồ Chí Minh',
-  new Date('2000-01-01'),
-  'TP Hồ Chí Minh'
-  );
+  nhanVien!: NhanVien;
 
-  constructor (){
-    this.mockData();
+  cuTru_QuocGias: QuocGia[] = [];
+  cuTru_TinhThanhs: TinhThanh[] = [];
+  cuTru_QuanHuyens: QuanHuyen[] = [];
+
+  tamTru_QuocGias: QuocGia[] = [];
+  tamTru_TinhThanhs: TinhThanh[] = [];
+  tamTru_QuanHuyens: QuanHuyen[] = [];
+
+  constructor(private nhanVienService: MockNhanVienService) {}
+
+  ngOnInit() {
+    this.nhanVienService.fetchById('NV001').subscribe(nv => {
+      if (nv) {
+        this.nhanVien = nv;
+
+        this.cuTru_QuocGias = [nv.diaChiCuTru.quocGia];
+        this.cuTru_TinhThanhs = nv.diaChiCuTru.quocGia?.tinhThanhs ?? [];
+        this.cuTru_QuanHuyens = nv.diaChiCuTru.tinhThanh?.quanHuyens ?? [];
+
+        this.tamTru_QuocGias = [nv.diaChiTamTru.quocGia];
+        this.tamTru_TinhThanhs = nv.diaChiTamTru.quocGia?.tinhThanhs ?? [];
+        this.tamTru_QuanHuyens = nv.diaChiTamTru.tinhThanh?.quanHuyens ?? [];
+      }
+    });
   }
 
-  mockData() {
-    this.nhanVien.thongTinChungThuc_CCCD = new TTChungThuc_CCCD (
-      'NV001',
-      123456789012,
-      new Date('2020-01-01'),
-      new Date('2030-01-01'),
-      'Cục Cảnh sát QLHC',
-      'B1234567'
-    )
-
-    this.nhanVien.thongTinChungThuc_SoHC = new TTChungThuc_SoHC(
-      'NV001',
-      'B1234567',
-      new Date('2020-06-15'),
-      new Date('2030-06-15'),
-      'Cục Quản lý Xuất nhập cảnh'
-    );
-
-    this.nhanVien.theuTNCN = new TheuTNCN(
-      'NV001',
-      2222222,
-      new Date('2020-06-15'),
-      'Cục quản lý'
-    )
-
-    this.nhanVien.ngheNghiep = new NgheNghiep(
-      'NV001',
-      'Đại học',
-      'Không',
-      'Cử nhân',
-      'Công nghệ thông tin',
-      'Lập trình viên'
-    );
-
-    this.nhanVien.thongTinLienHe = new ThongTinLienHe(
-      'NV001',
-      999555444,
-      999888555,
-      'admin@gmai.com',
-      'Nguyễn Văn A',
-      666688877,
-      'Chồng',
-      'nguyen@linki',
-      'nguyen@linke',
-      'nguuyen@linkd'
-    )
+  // Thường trú
+  onChangeQuocGia_CT(quocGia: QuocGia) {
+    this.nhanVien.diaChiCuTru.quocGia = quocGia;
+    this.nhanVien.diaChiCuTru.tinhThanh = undefined!;
+    this.nhanVien.diaChiCuTru.quanHuyen = undefined!;
+    this.cuTru_TinhThanhs = quocGia.tinhThanhs;
+    this.cuTru_QuanHuyens = [];
   }
 
+  onChangeTinhThanh_CT(tinh: TinhThanh) {
+    this.nhanVien.diaChiCuTru.tinhThanh = tinh;
+    this.nhanVien.diaChiCuTru.quanHuyen = undefined!;
+    this.cuTru_QuanHuyens = tinh.quanHuyens;
+  }
+
+  onChangeQuanHuyen_CT(qh: QuanHuyen) {
+    this.nhanVien.diaChiCuTru.quanHuyen = qh;
+  }
+
+  // Tạm trú
+  onChangeQuocGia_TT(quocGia: QuocGia) {
+    this.nhanVien.diaChiTamTru.quocGia = quocGia;
+    this.nhanVien.diaChiTamTru.tinhThanh = undefined!;
+    this.nhanVien.diaChiTamTru.quanHuyen = undefined!;
+    this.tamTru_TinhThanhs = quocGia.tinhThanhs;
+    this.tamTru_QuanHuyens = [];
+  }
+
+  onChangeTinhThanh_TT(tinh: TinhThanh) {
+    this.nhanVien.diaChiTamTru.tinhThanh = tinh;
+    this.nhanVien.diaChiTamTru.quanHuyen = undefined!;
+    this.tamTru_QuanHuyens = tinh.quanHuyens;
+  }
+
+  onChangeQuanHuyen_TT(qh: QuanHuyen) {
+    this.nhanVien.diaChiTamTru.quanHuyen = qh;
+  }
 }
+
