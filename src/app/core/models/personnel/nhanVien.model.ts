@@ -1,4 +1,4 @@
-import { DiaChiCuTru, DiaChiTamTru } from "./diaChi.model";
+import { DiaChiCuTru, DiaChiTamTru, QuocGia } from "./diaChi.model";
 import { NgheNghiep } from "./ngheNghiep.model";
 import { TheuTNCN, TTChungThuc_CCCD, TTChungThuc_SoHC } from "./thongTinChungThuc.model";
 import { ThongTinLienHe } from "./thongTinLienHe.model";
@@ -9,11 +9,11 @@ export class NhanVien {
   tenDem: string;
   ten: string;
   tenVietTat: string;
-  gioiTinh: string;
-  quocTich: string;
-  danToc: string;
-  tonGiao: string;
-  tinhTrangHonNhan: string;
+  gioiTinh: GioiTinh;
+  quocTich: QuocGia;
+  danToc: danToc;
+  tonGiao: tonGiao;
+  tinhTrangHonNhan: tinhTrangHonNhan;
   nguyenQuan: string;
   ngaySinh: Date;
   noiSinh: string;
@@ -24,11 +24,11 @@ export class NhanVien {
     tenDem: string,
     ten: string, 
     tenVietTat: string,
-    gioiTinh: string,
-    quocTich: string,
-    danToc: string,
-    tonGiao: string,
-    tinhTrangHonNhan: string,
+    gioiTinh: GioiTinh,
+    quocTich: QuocGia,
+    danToc: danToc,
+    tonGiao: tonGiao,
+    tinhTrangHonNhan: tinhTrangHonNhan,
     nguyenQuan: string,
     ngaySinh: Date,
     noiSinh: string
@@ -56,5 +56,45 @@ export class NhanVien {
   theuTNCN!: TheuTNCN;
   ngheNghiep!: NgheNghiep;
   thongTinLienHe!: ThongTinLienHe;
+}
+
+export class danToc {
+  maDanToc: string;
+  tenDanToc: string;
+
+  constructor (maDanToc: string, tenDanToc: string) {
+    this.maDanToc = maDanToc;
+    this.tenDanToc = tenDanToc;
+  }
+}
+
+export class tonGiao {
+  maTonGiao: string;
+  tenTonGiao: string;
+
+  constructor (maTG: string, tenTG: string) {
+    this.maTonGiao = maTG;
+    this.tenTonGiao = tenTG;
+  }
+}
+
+export class tinhTrangHonNhan {
+  maTTHN: string;
+  tenTTHN: string;
+
+  constructor(maTTHN: string, tenTTHN: string) {
+    this.maTTHN = maTTHN;
+    this.tenTTHN = tenTTHN;
+  }
+}
+
+export class GioiTinh {
+  maGT: string;
+  tenGT: string;
+
+  constructor(maGT: string, tenGT: string) {
+    this.maGT = maGT;
+    this.tenGT = tenGT;
+  }
 }
 

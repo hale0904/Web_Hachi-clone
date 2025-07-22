@@ -5,17 +5,16 @@ import { FormsModule } from "@angular/forms";
 
 import { AvatarInfoComponent } from "./avatar-info/avatar-info.component";
 import { AvatarNavComponent } from "./avatar-nav/avatar-nav.component";
-import { DropdownComponent } from './dropdown/dropdown.component';
 import { InputComponent } from "./input/input.component";
 import { DateComponent } from './date/date.component';
 import { BirthDateComponent } from './birth-date/birth-date.component';
-import { SelectBoxComponent } from "./select-box/select-box.component";
-
+import { DropDownsModule } from "@progress/kendo-angular-dropdowns";
+import { KendoDropdownModule } from "./kendo-ui/kendo.module";
 
 @NgModule ({
-    declarations: [AvatarInfoComponent, AvatarNavComponent, DropdownComponent, InputComponent, DropdownComponent, DateComponent, BirthDateComponent, SelectBoxComponent],
-    imports: [CommonModule, RouterModule, FormsModule ],
-    exports: [AvatarInfoComponent, AvatarNavComponent, InputComponent, DropdownComponent, DateComponent, BirthDateComponent, SelectBoxComponent]
+    declarations: [AvatarInfoComponent, AvatarNavComponent, InputComponent, DateComponent, BirthDateComponent ],
+    imports: [CommonModule, RouterModule, FormsModule, DropDownsModule, KendoDropdownModule ],
+    exports: [AvatarInfoComponent, AvatarNavComponent, InputComponent, DateComponent, BirthDateComponent, KendoDropdownModule   ]
 })
 
 export class PersonnelModule {}

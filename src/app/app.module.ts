@@ -7,6 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './shared/layouts/layout.module';
 import { P_PersonnelModule } from './pages/p-personnel/p-personnel.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 
 @NgModule({
   declarations: [
@@ -21,6 +25,7 @@ import { P_PersonnelModule } from './pages/p-personnel/p-personnel.module';
     // Các module con
     LayoutModule,
     P_PersonnelModule,
+    BrowserAnimationsModule,
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]

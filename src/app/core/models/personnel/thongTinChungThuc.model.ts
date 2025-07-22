@@ -4,7 +4,6 @@ export class TTChungThuc_CCCD {
   ngayCap: Date;
   ngayHetHan: Date;
   noiCap: string;
-  soHoChieu: string;
 
   constructor(
     idNV: string,
@@ -12,14 +11,12 @@ export class TTChungThuc_CCCD {
     ngayCap: Date,
     ngayHetHan: Date,
     noiCap: string,
-    soHoChieu: string
   ) {
     this.idNV = idNV;
     this.cccd = cccd;
     this.ngayCap = ngayCap;
     this.ngayHetHan = ngayHetHan;
     this.noiCap = noiCap;
-    this.soHoChieu = soHoChieu;
   }
 }
 

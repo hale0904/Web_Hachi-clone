@@ -17,7 +17,7 @@ export class MockNhanVienService {
 
   // Fetch theo ID
   fetchById(id: string): Observable<NhanVien | undefined> {
-    const nhanVien = NHANVIENS.find(nv => nv.idNV = id);
-    return of(nhanVien);
+    const nhanVien = NHANVIENS.find(nv => nv.idNV = id)
+    return of (nhanVien);
   }
 }

@@ -22,39 +22,65 @@
                     </div>
 
                     <div class="container__profile-col-2">
-                        <app-dropdown
+                        <app-kendo-dropdown
                             label="Giới tính"
                             [model]="nhanVien"
                             property="gioiTinh"
-                            [options]="['Nam', 'Nữ', 'Khác']">
-                        </app-dropdown>
-                        <app-dropdown
+                            [data]="ds_gioiTinh"
+                            textField="tenGT"
+                            valueField="maGT"
+                            [defaultItem]="{tenGT: '-- Chọn giới tính --' }"
+                            [disabled]="false"
+                            [filterable]="true"
+                            (valueChange)="onChangeGioiTinh($event)">
+                        </app-kendo-dropdown>
+                        <app-kendo-dropdown
                             label="Quốc tịch"
                             [model]="nhanVien"
                             property="quocTich"
-                            [options]="['Việt Nam', 'Mỹ', 'Trung Quốc']">
-                        </app-dropdown>
-                        <app-dropdown
+                            textField="tenQG"
+                            valueField="maQG"
+                            [data]="cuTru_QuocGias"
+                            [defaultItem]="{ tenQG: '-- Chọn quốc tịch --' }"
+                            [filterable]="true"
+                            (valueChange)="onChangeQuocTich($event)">
+                        </app-kendo-dropdown>
+                        <app-kendo-dropdown
                             label="Dân tộc"
                             [model]="nhanVien"
                             property="danToc"
-                            [options]="['Kinh', 'Mường', 'Thái']">
-                        </app-dropdown>
-                        <app-dropdown
+                            textField="tenDanToc"
+                            valueField="maDanToc"
+                            [data]="ds_danTocs"
+                            [defaultItem]="{ tenDanToc: '-- Chọn dân tộc --' }"
+                            [filterable]="true"
+                            (valueChange)="onChangeDanToc($event)">
+                        </app-kendo-dropdown>
+                        <app-kendo-dropdown
                             label="Tôn giáo"
                             [model]="nhanVien"
                             property="tonGiao"
-                            [options]="['Thiên chúa giáo', 'Phật giáo', 'Không']">
-                        </app-dropdown>
+                            textField="tenTonGiao"
+                            valueField="maTonGiao"
+                            [data]="ds_tonGiaos"
+                            [defaultItem]="{ tenTonGiao: '-- Chọn dân tộc --' }"
+                            [filterable]="true"
+                            (valueChange)="onChangeTonGiao($event)">
+                        </app-kendo-dropdown>
                     </div>
 
                     <div class="container__profile-col-3">
-                        <app-dropdown
+                        <app-kendo-dropdown
                             label="Tình trạng hôn nhân"
                             [model]="nhanVien"
                             property="tinhTrangHonNhan"
-                            [options]="['Đã kết hôn', 'Độc thân']">
-                        </app-dropdown>
+                            textField="tenTTHN"
+                            valueField="maTTHN"
+                            [data]="ds_tinhTrangHonNhan"
+                            [defaultItem]="{ tenTTHN: '-- Chọn tình trạng hôn nhân --' }"
+                            [filterable]="true"
+                            (valueChange)="onChangeTTHN($event)">
+                        </app-kendo-dropdown>
                         <app-input label="Nguyên quán" [model]="nhanVien" property="nguyenQuan"></app-input>
                         <app-birth-date
                             label="Ngày sinh"
@@ -96,29 +122,47 @@
                 <div class="container__profile-col">
                     
                     <div class="container__profile-col-1">
-                        <app-dropdown
+                        <app-kendo-dropdown
                             label="Trình độ học vấn"
                             [model]="nhanVien.ngheNghiep"
                             property="trinhDoHocVan"
-                            [options]="['Đại học', 'Cao đẳng', 'Trung cấp']">
-                        </app-dropdown>
-                        <app-dropdown
+                            [data]="ds_trinhDoHocVan"
+                            textField="tenHocVan"
+                            valueField="maHocVan"
+                            [defaultItem]="{tenHocVan: '-- Chọn trình độ học vấn --' }"
+                            [disabled]="false"
+                            [filterable]="true"
+                            (valueChange)="onChangeTrinhDoHocVan($event)">
+                        </app-kendo-dropdown>
+                        <app-kendo-dropdown
                             label="Học hàm"
                             [model]="nhanVien.ngheNghiep"
                             property="hocHam"
-                            [options]="['Giáo sư', 'Tiến sĩ', 'Không']">
-                        </app-dropdown>
-                        <app-dropdown
-                            label="Học vị"
+                            [data]="ds_hocham"
+                            textField="tenHocHam"
+                            valueField="maHocHam"
+                            [defaultItem]="{tenHocHam: '-- Chọn học hàm --' }"
+                            [disabled]="false"
+                            [filterable]="true"
+                            (valueChange)="onChangeHocHam($event)">
+                        </app-kendo-dropdown>
+                        <app-kendo-dropdown
+                            label="Học Vị"
                             [model]="nhanVien.ngheNghiep"
                             property="hocVi"
-                            [options]="['Cử nhân', 'Thạc sĩ']">
-                        </app-dropdown>
+                            [data]="ds_hocVi"
+                            textField="tenHocVi"
+                            valueField="maHocVi"
+                            [defaultItem]="{tenHocVi: '-- Chọn học vị --' }"
+                            [disabled]="false"
+                            [filterable]="true"
+                            (valueChange)="onChangeHocVi($event)">
+                        </app-kendo-dropdown>
                     </div>
 
                     <div class="container__profile-col-2">
                         <app-input label="Lĩnh vực chuyên gia" [model]="nhanVien.ngheNghiep" property="linhVucChuyenGia"></app-input>
-                        <app-input label="ngheNghiep" [model]="nhanVien.ngheNghiep" property="ngheNghiep"></app-input>
+                        <app-input label="Nghề nghiệp" [model]="nhanVien.ngheNghiep" property="ngheNghiep"></app-input>
                         
                     </div>
                </div>
@@ -139,34 +183,9 @@
                     </div>
 
                     <div class="container__profile-col-3">
-                        <div class="container__profile-social">
                             <app-input label="Mạng xã hội 1" [model]="nhanVien.thongTinLienHe" property="mangXH1"></app-input>
-                            <app-dropdown
-                                label="Chọn"
-                                [model]="nhanVien.ngheNghiep"
-                                property="mangXH1"
-                                [options]="['FB', 'Linked']">
-                            </app-dropdown>
-                        </div>
-                        <div class="container__profile-social">
                             <app-input label="Mạng xã hội 2" [model]="nhanVien.thongTinLienHe" property ="mangXH2"></app-input>
-                            <app-dropdown
-                                label="Chọn"
-                                [model]="nhanVien.ngheNghiep"
-                                property="mangXH2"
-                                [options]="['FB', 'Linked']">
-                            </app-dropdown>
-                        </div>
-                        <div class="container__profile-social">
                             <app-input label="Tài khoản chat/VoiP" [model]="nhanVien.thongTinLienHe" property="taiKhoanChat"></app-input>
-                            <app-dropdown
-                                label="Chọn"
-                                [model]="nhanVien.ngheNghiep"
-                                property="taiKhoanChat"
-                                [options]="['FB', 'Linked']">
-                            </app-dropdown>
-                        </div>
-                        
                     </div>
                </div>
 
@@ -179,30 +198,42 @@
                             [model]="nhanVien.diaChiCuTru" 
                             property="diaChi">
                         </app-input>
-                        <app-select-box
+                        <app-kendo-dropdown
                             label="Quốc gia"
                             [model]="nhanVien.diaChiCuTru"
                             property="quocGia"
-                            [options]="cuTru_QuocGias"
+                            [data]="cuTru_QuocGias"
+                            textField="tenQG"
+                            valueField="maQG"
+                            [defaultItem]="{tenQG: '-- Chọn quốc gia --' }"
                             [disabled]="false"
-                            (selectionChange)="onChangeQuocGia_CT($event)">
-                        </app-select-box>
-                        <app-select-box
+                            [filterable]="false"
+                            (valueChange)="onChangeQuocGia_CT($event)">
+                        </app-kendo-dropdown>
+                        <app-kendo-dropdown
                             label="Tỉnh thành"
                             [model]="nhanVien.diaChiCuTru"
                             property="tinhThanh"
-                            [options]="cuTru_TinhThanhs"
-                            [disabled]="!nhanVien.diaChiCuTru.quocGia"
-                            (selectionChange)="onChangeTinhThanh_CT($event)">
-                        </app-select-box>
-                        <app-select-box
-                            label="Quận huyện"
+                            [data]="cuTru_TinhThanhs"
+                            textField="tenTinh"
+                            valueField="maTinh"
+                            [defaultItem]="{tenTinh: '-- Chọn Tỉnh --' }"
+                            [filterable]="true"
+                            [disabled]="false"
+                            (valueChange)="onChangeTinhThanh_CT($event)">
+                        </app-kendo-dropdown>
+                        <app-kendo-dropdown
+                            label="Quận/Huyện"
                             [model]="nhanVien.diaChiCuTru"
                             property="quanHuyen"
-                            [options]="cuTru_QuanHuyens"
-                            [disabled]="!nhanVien.diaChiCuTru.tinhThanh"
-                            (selectionChange)="onChangeQuanHuyen_CT($event)">
-                        </app-select-box>
+                            [data]="cuTru_QuanHuyens"
+                            textField="tenQuanHuyen"
+                            valueField="maQuanHuyen"
+                            [defaultItem]="{tenQuanHuyen: '-- Chọn quận huyện --' }"
+                            [disabled]="false"
+                            [filterable]="false"
+                            (valueChange)="onChangeQuanHuyen_CT($event)">
+                        </app-kendo-dropdown>
                     </div>
 
                     <div class="container__profile-col-2">
@@ -211,30 +242,42 @@
                             [model]="nhanVien.diaChiTamTru" 
                             property="diaChi">
                         </app-input>
-                        <app-select-box
+                        <app-kendo-dropdown
                             label="Quốc gia"
                             [model]="nhanVien.diaChiTamTru"
                             property="quocGia"
-                            [options]="tamTru_QuocGias"
+                            [data]="tamTru_QuocGias"
+                            textField="tenQG"
+                            valueField="maQG"
+                            [defaultItem]="{tenQG: '-- Chọn quốc gia --' }"
                             [disabled]="false"
-                            (selectionChange)="onChangeQuocGia_TT($event)">
-                        </app-select-box>
-                        <app-select-box
+                            [filterable]="true"
+                            (valueChange)="onChangeQuocGia_TT($event)">
+                        </app-kendo-dropdown>
+                        <app-kendo-dropdown
                             label="Tỉnh thành"
                             [model]="nhanVien.diaChiTamTru"
                             property="tinhThanh"
-                            [options]="tamTru_TinhThanhs"
-                            [disabled]="!nhanVien.diaChiTamTru.quocGia"
-                            (selectionChange)="onChangeTinhThanh_TT($event)">
-                        </app-select-box>
-                        <app-select-box
-                            label="Quận huyện"
+                            [data]="tamTru_TinhThanhs"
+                            textField="tenTinh"
+                            valueField="maTinh"
+                            [defaultItem]="{tenTinh: '-- Chọn Tỉnh --' }"
+                            [disabled]="false"
+                            [filterable]="true"
+                            (valueChange)="onChangeTinhThanh_TT($event)">
+                        </app-kendo-dropdown>
+                        <app-kendo-dropdown
+                            label="Quận/Huyện"
                             [model]="nhanVien.diaChiTamTru"
                             property="quanHuyen"
-                            [options]="tamTru_QuanHuyens"
-                            [disabled]="!nhanVien.diaChiTamTru.tinhThanh"
-                            (selectionChange)="onChangeQuanHuyen_TT($event)">
-                        </app-select-box>
+                            [data]="tamTru_QuanHuyens"
+                            textField="tenQuanHuyen"
+                            valueField="maQuanHuyen"
+                            [defaultItem]="{tenQuanHuyen: '-- Chọn quận huyện --' }"
+                            [disabled]="false"
+                            [filterable]="true"
+                            (valueChange)="onChangeQuanHuyen_TT($event)">
+                        </app-kendo-dropdown>
                     </div>
                </div>
             </div> 
